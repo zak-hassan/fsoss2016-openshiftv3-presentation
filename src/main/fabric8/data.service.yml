@@ -1,0 +1,27 @@
+---
+apiVersion: "v1"
+kind: "Service"
+metadata:
+  name: "data-service"
+  annotations:
+    fabric8.io/iconUrl: "img/icons/spring-boot.svg"
+  labels:
+    provider: "fabric8"
+    project: "fsoss2016"
+    version: "0.0.1-SNAPSHOT"
+    group: "com.openshift.demo"
+spec:
+  ports:
+  - port: 8080
+    name: web-api-port
+    protocol: "TCP"
+    targetPort: 8080
+  - port: 27017
+    name: mongo-db-port
+    protocol: "TCP"
+    targetPort: 27017
+  selector:
+    project: "fsoss2016"
+    provider: "fabric8"
+    group: "com.openshift.demo"
+  type: "LoadBalancer"
