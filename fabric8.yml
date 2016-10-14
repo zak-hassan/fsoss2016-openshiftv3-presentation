@@ -1,0 +1,15 @@
+---
+pipeline: "workflows/maven/CanaryReleaseStageAndApprovePromote/Jenkinsfile"
+buildName: "fsoss2016-openshiftv3-presentation"
+codeReview: false
+links:
+  Git: "https://github.com/zmhassan/fsoss2016-openshiftv3-presentation.git"
+  Job: "http://192.168.64.20:30791/job/fsoss2016-openshiftv3-presentation"
+  Production: "http://172.30.34.36:80/kubernetes/pods?namespace=default-production"
+  Staging: "http://172.30.34.36:80/kubernetes/pods?namespace=default-staging"
+  Testing: "http://172.30.34.36:80/kubernetes/pods?namespace=default-testing"
+environments:
+  Testing: "default-testing"
+  Staging: "default-staging"
+  Production: "default-production"
+useLocalFlow: true
